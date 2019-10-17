@@ -8,19 +8,18 @@ class Room extends Component {
     var getValues = JSON.parse(localStorage.getItem('room_value'));
     super(props);
     this.state = {
-        error: null,
-        isLoaded: false,
-        rooms: [],
-        activeClass: null,
-        activeImage: null,
-        room_value: {
-          id:null,
-          image: "",
-          content: ''  
-        },
-        getValues: getValues,
-        btn: ""
-        
+      error: null,
+      isLoaded: false,
+      rooms: [],
+      activeClass: null,
+      activeImage: null,
+      room_value: {
+        id:null,
+        image: "",
+        content: ''  
+      },
+      getValues: getValues,
+      btn: ""
     }
     this.ChangeClassName = this.ChangeClassName.bind(this);
     this.logout = this.logout.bind(this);
@@ -55,13 +54,12 @@ class Room extends Component {
             },
            btn: this.state.getValues.image   
         });
-
       } 
     window.onbeforeunload = function() {
-      // localStorage.clear();
       localStorage.removeItem("room_value")
     }   
   }
+
   // Select and Unselect room values  
   ChangeClassName  = (r_id, f, e, c, id) => {
     if (this.state[r_id] !== undefined && this.state[r_id] && this.state[f]) {
@@ -80,10 +78,10 @@ class Room extends Component {
         [r_id]: true,
         [f]: true,
         room_value: {
-            id: id,
-            image: e,
-            content: c 
-          },
+          id: id,
+          image: e,
+          content: c 
+        },
         btn: e  
       });
     }

@@ -49,22 +49,23 @@ class UserAccount extends Component {
           email: this.state.email_value,
           password: this.state.password_value,
           user_requirements_attributes: [{
-              room_id: getRoom_value.id,
-              furniture: getFurniture_image,
-              user_requirement_styles_attributes: style_images,
-              user_requirement_goals_attributes: goal_images,
-            }]   
+            room_id: getRoom_value.id,
+            furniture: getFurniture_image,
+            user_requirement_styles_attributes: style_images,
+            user_requirement_goals_attributes: goal_images,
+          }]   
         }
       }
     
     }
+    // Post all pages data and Get token
     axios.post('http://10.90.90.71:3000/api/v1/users', data).then(res =>{
       localStorage.setItem('token', JSON.stringify(res));
       this.props.history.push('/success');
     }).catch(err => {
       this.setState({valid: false})
     });
-
+    // For email and password validation
     var re = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     if(this.state.email_value === "" || re.test(this.state.email_value) === false) {
       this.setState({e_valid: false,email_error: "Enter valid email"});
@@ -88,10 +89,12 @@ class UserAccount extends Component {
       }
     })
   }
+  
   // Get the values from email field
   emailOnChange (e) {
     this.setState({email_value: e.target.value});
   }
+  
   // Get the values from password field
   passwordOnChange (e) {
     this.setState({password_value: e.target.value});

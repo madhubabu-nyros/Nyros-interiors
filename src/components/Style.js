@@ -7,17 +7,17 @@ class Style extends Component {
   constructor (props) {
     super(props);
     this.state = {
-        error: null,
-        isLoaded: false,
-        styles: [],
-        b_none: false,
-        style_values: getStyleValues,
-        input_box: false,
-        value: '',
-        values:{},
-        val:{},
-        ids: getStyleIds,
-        btn: "",
+      error: null,
+      isLoaded: false,
+      styles: [],
+      b_none: false,
+      style_values: getStyleValues,
+      input_box: false,
+      value: '',
+      values:{},
+      val:{},
+      ids: getStyleIds,
+      btn: "",
     }
     // Get the all local storage values
     var getStyleValues = localStorage.getItem('style_values') ? JSON.parse(localStorage.getItem('style_values')) : [];
@@ -65,8 +65,8 @@ class Style extends Component {
            });
         } else {
           this.setState({
-             btn: "enable",
-           });
+            btn: "enable",
+          });
         }
       })
     } else {
@@ -226,7 +226,6 @@ class Style extends Component {
      } 
 
     window.onbeforeunload = function() {
-      // localStorage.clear();
       localStorage.removeItem("style_values")
       localStorage.removeItem("style_ids")
     }  

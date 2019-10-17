@@ -91,8 +91,8 @@ class Goal extends Component {
          });
       } else {
         this.setState({
-           btn: "enable",
-         });
+          btn: "enable",
+        });
       }
     })
 
@@ -106,7 +106,7 @@ class Goal extends Component {
   setGoalValue() {
     if(this.state.goal_6 === false) {
       var getGoalContent = localStorage.getItem('goal_value') ? JSON.parse(localStorage.getItem('goal_value')) : [];
-        var index = getGoalContent.indexOf(this.state.value)
+      var index = getGoalContent.indexOf(this.state.value)
       localStorage.removeItem(getGoalContent[index]);
     }
     if(this.state.value !== "") {
@@ -157,12 +157,12 @@ class Goal extends Component {
     } 
     if(this.state.ids.length == 0 ) {
         this.setState({
-           btn: "",
-         });
+          btn: "",
+        });
       } else {
         this.setState({
-           btn: "enable",
-         });
+          btn: "enable",
+        });
       }
     window.onbeforeunload = function() {
       // localStorage.clear();
@@ -174,7 +174,6 @@ class Goal extends Component {
     if(localStorage.token) {
       var token = JSON.parse(localStorage.getItem('token'));
       axios.put('http://10.90.90.71:3000/api/v1/authentication/'+token.data.id).then(res =>{
-        console.log("Success")
         localStorage.clear();
         this.props.history.push('/');
       })
@@ -182,7 +181,6 @@ class Goal extends Component {
   }
 
   render() {
-    console.log("btn",this.state.btn)
     const { error, isLoaded, goals } = this.state;
 
     if (error) {

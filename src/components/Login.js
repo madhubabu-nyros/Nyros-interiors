@@ -22,17 +22,14 @@ class Login extends Component {
     }
 
     axios.post('http://10.90.90.71:3000/api/v1/authentication', loginParams).then(res =>{
-       setTimeout(()=> {
-      console.log("res.authentication_token",res) })
       localStorage.setItem('token', JSON.stringify(res));
       this.props.history.push('/');
     }).catch(err => {
-      this.setState({
-        error: "Error: Invalid Username/password.",
-        valid: false
-    });
-
-    });
+        this.setState({
+          error: "Error: Invalid Username/password.",
+          valid: false
+        });
+      });
   }
   // Get the email value from emial input field  
   emailOnChange (e) {
