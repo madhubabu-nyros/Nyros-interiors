@@ -44,7 +44,7 @@ class Furniture extends Component {
       localStorage.clear();
     }
   }
-  //Clear local storage values
+  //Clear local storage values for logout
   logout() {
     if(localStorage.token) {
       var token = JSON.parse(localStorage.getItem('token'));

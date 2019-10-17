@@ -9,7 +9,7 @@ class Home extends Component {
     this.logout = this.logout.bind(this);
     this.nextRoomPage = this.nextRoomPage.bind(this);
   }
-  // Clear all local storage values 
+  // Clear all local storage values for logout
   logout() {
     if(localStorage.token) {
       var token = JSON.parse(localStorage.getItem('token'));

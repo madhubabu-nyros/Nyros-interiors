@@ -169,7 +169,7 @@ class Goal extends Component {
       localStorage.removeItem("goal_value")
     } 
   }
-  // clear all local storage values
+  // clear all local storage values for logout
   logout() {
     if(localStorage.token) {
       var token = JSON.parse(localStorage.getItem('token'));
