@@ -11,6 +11,7 @@
 --git clone https://github.com/madhubabu-nyros/nyros-interiors
 
 Open Another terminal
+
 --cd Nyros-interiors
 
 --npm install
